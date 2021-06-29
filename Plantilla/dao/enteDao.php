@@ -42,6 +42,43 @@
     }
     
     }
+    ##modificar ente
+    public function modificarEnte(EnteDto $enteDto){
+        $cnn = Conexion ::getConexion();
+        $mensaje = "";
+        try {
+            $query= $cnn->prepare('UPDATE usuario_contenido_ente SET nit=?, razon_social=?, nombre_representante_legal=?, correo_electronico=?, sitio_web=?, ciudad=?, capacidad_pacientes=? WHERE nit=?');
+            
+            $query->bindParam(1, $enteDto->getNit());
+            $query->bindParam(2, $enteDto->getRazon());
+            $query->bindParam(3, $enteDto->getRepresentante());
+            $query->bindParam(4, $enteDto->getCorreo());
+            $query->bindParam(5, $enteDto->getSitio());
+            $query->bindParam(6, $enteDto->getCiudad());
+            $query->bindParam(7, $enteDto->getCapacidad());
+            $query->execute();
+            $mensaje = "Registro Actualizado";
+        } catch (Exception $ex) {
+            $mensaje = $ex->getMessage();
+        }
+        $cnn = null;
+        return $mensaje;
+    }
+    
+    //Eliminar Ente
+    public function eliminarEnte($nit){
+        $cnn = Conexion::getConexion();
+        $mensaje = "";
+        try {
+            $query = $cnn->prepare("DELETE FROM usuario_contenido_ente WHERE nit= ?");
+            $query->bindParam(1, $nit);
+            $query->execute();
+            $mensaje = "Registro Eliminado";
+        } catch (Exception $ex) {
+            $mensaje = $ex->getMessage();
+        }
+        return $mensaje;
+    }
 
  }
  

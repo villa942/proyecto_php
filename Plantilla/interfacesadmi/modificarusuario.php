@@ -278,59 +278,48 @@
     <section class="content">
       <div class="container-fluid">
           <div class="col-md-9 ">
-       
-      
 
 
+<form  action="../controladores/controlador.usuariologin.php" method="POST">
+<h3 class="text-center">Modificar de especialista </h3>
 
-
-
-
-<form  action="../controladores/controlador.especialista.php" method="POST">
-<h3 class="text-center">Registro de especialista </h3>
-<br>
-<br>
-
-<br>
-
-<label for="">Numero de licencia de salud</label>
-<input type="text" name="licencia" placeholder="Escriba el numero de licencia "required class="form-control"><br>
-<label for="">Fecha de expedicion de licencia</label>
-<input type="date" name="expedicion"placeholder="Escriba la razon " required class="form-control"><br>
-<label for="">Nombre</label>
-<input type="text" name="nombre" placeholder="Escriba el nombre completo "required class="form-control"><br>
-<label for="">Correo</label>
-<input type="text" name="correo" placeholder="Escriba su correo"required class="form-control"><br>
-<label for="">Celular</label>
-<input type="text" name="celular" placeholder="Escriba el numero de celular"required class="form-control"><br>
-<label for="">Ciudad</label>
-<input type="text" name="ciudad" placeholder="Escriba la ciudad"required class="form-control"><br>
-<label for="">Especialidad</label>
-<input type="text" name="especialidad" placeholder="Escriba la especialidad"required class="form-control"><br>
-<label for="">Ente de salud</label>
-<select class="form-control" name="ente" id="ente">
 <?php
-require '../dao/enteDao.php';
-require '../dto/enteDto.php';
-require '../conexion.php';
+    require '../dao/UsuarioLoginDao.php';
+    require '../dto/UsuarioLoginDto.php';
+    require '../conexion.php';
+    if($_GET['id']!=NULL){
+        $uDao = new UsuarioLoginDao();
+        $usuario = $uDao->obtenerUsuario($_GET['id']);
 
+    }
+    ?>
+<label for="">Id</label>
+<input type="text" value="<?php echo $usuario['id_usuario'] ?>" name="id_usuario" placeholder="Escriba el numero de licencia "required class="form-control"><br>
 
-
-$ente = new EnteDao();
- $listent = $ente->listarTodos();
-foreach ($listent as $ent){
-    echo'<option  value="'.$ent["razon_social"].'"  >'
-    .$ent["razon_social"]," ".
-    '</option>';
-}
-?>
-
+<label for="">Nombre</label>
+<input type="text" value="<?php echo $usuario['nombre'] ?>" name="nombre" placeholder="Escriba el numero de licencia "required class="form-control"><br>
+<label for="">apellido</label>
+<input type="text" value="<?php echo $usuario['apellido'] ?>" name="apellido"placeholder="Escriba la razon " required class="form-control"><br>
+<label for="">Numero de documento</label>
+<input type="text" value="<?php echo $usuario['cedula'] ?>" name="cedula" placeholder="Escriba el nombre completo "required class="form-control"><br>
+<label for="">Correo</label>
+<input type="text" value="<?php echo $usuario['correo_electronico'] ?>" name="correo" placeholder="Escriba su correo"required class="form-control"><br>
+<label for="">Celular</label>
+<input type="text" value="<?php echo $usuario['celular'] ?>" name="celular" placeholder="Escriba el numero de celular"required class="form-control"><br>
+<label for="">Contraseña</label>
+<input type="text" value="<?php echo $usuario['contraseña'] ?>" name="contraseña" placeholder="Escriba la ciudad"required class="form-control"><br>
+<label for="">Tipo Usuario</label></b>
+                    <select class="form-select form-control" value="<?php echo $usuario['tipo_usuario'] ?>" name="tipousuario">
+                    <option value="">Seleccione...</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Usuario">Usuario</option>
+                    </select>
 
 </select>
 <br>
 
 <center>
-<input type="submit" href="especialistas.php"name="registroes" id="registro" value="Registrar" class="btn btn-outline-primary">
+<input type="submit" href="usuarios.php"name="modificar" id="modificar" value="Modificar" class="btn btn-outline-primary">
 </center>
 <br>
 </form>

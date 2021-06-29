@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +25,15 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script>
+    function confirmar(){
+        if(confirm('Esta seguro que desea borrar')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -41,7 +49,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
-      
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -277,78 +287,87 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-          <div class="col-md-9 ">
-       
-      
+        
+      <button > <a href="crearusuario.php">Crear usuario </a></button>
 
+      <h1>Lista de usuarios</h1>
+    <table class="table table-striped mt-4 table table-bordered border-primary"  >
+    <thead>
+    <tr>
+    
+    <th>Id</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Celular</th>
+    <th>Tipo usuario</th>
+    <th>Modificar</th>
+    <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    require '../conexion.php';
+    require '../dto/UsuarioLoginDto.php';
+    require '../dao/UsuarioLoginDao.php';
 
+    $eDao = new UsuarioLoginDao();
+    $allusers = $eDao->listarTodos();
+    
+    foreach ($allusers as $user) {?>  
+    <tr> 
+    <td> <?php echo $user['id_usuario'];?>  </td>
+    <td>  <?php echo $user['cedula'];?>  </td>
+    <td>  <?php echo $user['nombre'];?>  </td>
+    <td>  <?php echo $user['apellido'];?>  </td>
+    <td>  <?php echo $user['correo_electronico'];?>  </td>
+    <td>  <?php echo $user['celular'];?>  </td>
+    <td>  <?php echo $user['tipo_usuario'];?>  </td>
+    <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
+    <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+    " onclick = "return confirmar();" >Eliminar </a></td>    
 
+    
+    </tr>
+  <?php
+    }
+  ?>
+  
+  
+    </tbody>
+    </table>
+    <br><br>
+    <?php
 
-
-
-<form  action="../controladores/controlador.especialista.php" method="POST">
-<h3 class="text-center">Registro de especialista </h3>
-<br>
-<br>
-
-<br>
-
-<label for="">Numero de licencia de salud</label>
-<input type="text" name="licencia" placeholder="Escriba el numero de licencia "required class="form-control"><br>
-<label for="">Fecha de expedicion de licencia</label>
-<input type="date" name="expedicion"placeholder="Escriba la razon " required class="form-control"><br>
-<label for="">Nombre</label>
-<input type="text" name="nombre" placeholder="Escriba el nombre completo "required class="form-control"><br>
-<label for="">Correo</label>
-<input type="text" name="correo" placeholder="Escriba su correo"required class="form-control"><br>
-<label for="">Celular</label>
-<input type="text" name="celular" placeholder="Escriba el numero de celular"required class="form-control"><br>
-<label for="">Ciudad</label>
-<input type="text" name="ciudad" placeholder="Escriba la ciudad"required class="form-control"><br>
-<label for="">Especialidad</label>
-<input type="text" name="especialidad" placeholder="Escriba la especialidad"required class="form-control"><br>
-<label for="">Ente de salud</label>
-<select class="form-control" name="ente" id="ente">
-<?php
-require '../dao/enteDao.php';
-require '../dto/enteDto.php';
-require '../conexion.php';
-
-
-
-$ente = new EnteDao();
- $listent = $ente->listarTodos();
-foreach ($listent as $ent){
-    echo'<option  value="'.$ent["razon_social"].'"  >'
-    .$ent["razon_social"]," ".
-    '</option>';
-}
-?>
-
-
-</select>
-<br>
-
-<center>
-<input type="submit" href="especialistas.php"name="registroes" id="registro" value="Registrar" class="btn btn-outline-primary">
-</center>
-<br>
-</form>
-</div>
-
-      </div><!-- /.container-fluid -->
-      <?php
-if(isset($_GET['mensaje'])){
-    ?>
+    if(isset($_GET['mensaje'])){
+        ?>
     <div class="row"><br><br>
-        <div class="col-md-5"></div>
-        <div class="col-md-1 "><h4><?php echo $mensaje = $_GET['mensaje'] ?>
-            </h4></div>
+    <div class="col-md-5"></div>
+    <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
     <div class="col-md-5"></div>
     </div>
+
     <?php
-}
-?>
+    }
+    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -400,9 +419,3 @@ if(isset($_GET['mensaje'])){
 <script src="dist/js/pages/dashboard.js"></script>
 </body>
 </html>
-
-
-
-
-
-

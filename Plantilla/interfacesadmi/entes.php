@@ -195,7 +195,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="usuarios.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Usuarios
@@ -263,7 +263,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -294,7 +293,8 @@
     <th>Sitio</th>
     <th>Ciudad</th>
     <th>Capacidad</th>
-    <th>acciones</th>
+    <th>Modificar</th>
+    <th>Eliminar</th>
 
     </tr>
     </thead>
@@ -316,6 +316,9 @@
     <td>  <?php echo $user['sitio_web'];?>  </td>
     <td>  <?php echo $user['ciudad'];?>  </td>
     <td>  <?php echo $user['capacidad_pacientes'];?>  </td>
+    <td><a href="modificarente.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
+    <td><a href="../controladores/Controlador.ente.php?id=<?php echo $user['nit']; ?>
+    " onclick = "return confirmar();" >Eliminar </a></td>    
 
     
     </tr>
@@ -326,7 +329,19 @@
   
     </tbody>
     </table>
+    <?php
 
+if(isset($_GET['mensaje'])){
+    ?>
+<div class="row"><br><br>
+<div class="col-md-5"></div>
+<div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
+<div class="col-md-5"></div>
+</div>
+
+<?php
+}
+?>
 
 
 
