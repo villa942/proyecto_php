@@ -19,7 +19,7 @@ if(isset($_POST['registroe'])){
 
     $mensaje = $uDao->registrarEnte($uDto);
 
-    header("Location:../ente.php?mensaje=".$mensaje);
+    header("Location:../crearente.php?mensaje=".$mensaje);
 }
 
 

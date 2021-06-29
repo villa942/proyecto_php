@@ -3,7 +3,7 @@
 
  class EnteDao{
 
-    public function registrarEnte(enteDto $enteDto){
+    public function registrarEnte(EnteDto $enteDto){
         $cnn = Conexion::getConexion();
         $mensaje ="";
         try {
@@ -29,9 +29,22 @@
         $cnn= null;
         return $mensaje;
     }
-
+    public function listarTodos(){
+        $cnn=Conexion::getConexion();
+    
+    try {
+        $listarUsuarios ='select * from usuario_contenido_ente';
+        $query =$cnn->prepare($listarUsuarios);
+        $query->execute();
+        return $query->fetchAll();
+    } catch (Exception $ex) {
+        echo 'Error'.$ex->getMessage();
+    }
+    
+    }
 
  }
+ 
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Centro de salud</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -203,7 +203,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="entes.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Entes de salud
@@ -300,17 +300,22 @@
     </thead>
     <tbody>
     <?php
-    
+    require '../conexion.php';
+    require '../dto/enteDto.php';
+    require '../dao/enteDao.php';
+
+    $eDao = new EnteDao();
+    $allusers = $eDao->listarTodos();
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['matricula'];?>  </td>
-    <td>  <?php echo $user['modelo'];?>  </td>
-    <td>  <?php echo $user['color'];?>  </td>
-    <td>  <?php echo $user['hora'];?>  </td>
-    <td>  <?php echo $user['fechaentrada'];?>  </td>
-    <td> <a href="mecanicos.php?documento=<?php echo $ds['documento'];?>"><?php echo $user['mecanico'];?>  </td>
-
+    <td> <?php echo $user['nit'];?>  </td>
+    <td>  <?php echo $user['razon_social'];?>  </td>
+    <td>  <?php echo $user['nombre_representante_legal'];?>  </td>
+    <td>  <?php echo $user['correo_electronico'];?>  </td>
+    <td>  <?php echo $user['sitio_web'];?>  </td>
+    <td>  <?php echo $user['ciudad'];?>  </td>
+    <td>  <?php echo $user['capacidad_pacientes'];?>  </td>
 
     
     </tr>
