@@ -1,7 +1,7 @@
 <?php
 
 
- class EnteDao{
+ class EspecialistaDao{
 
     public function registrarEspecialista(EspecialistaDto $especialistaDto){
         $cnn = Conexion::getConexion();
@@ -29,6 +29,19 @@
         }
         $cnn= null;
         return $mensaje;
+    }
+    public function listarTodoses(){
+        $cnn=Conexion::getConexion();
+    
+    try {
+        $listarUsuarios ='select * from usuario_especialista';
+        $query =$cnn->prepare($listarUsuarios);
+        $query->execute();
+        return $query->fetchAll();
+    } catch (Exception $ex) {
+        echo 'Error'.$ex->getMessage();
+    }
+    
     }
 
 

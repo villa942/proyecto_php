@@ -281,6 +281,63 @@
       <div class="container-fluid">
         
       <button > <a href="crearespecialista.php">Crear especialista</a></button>
+
+
+      <h1>Lista de entes de salud</h1>
+    <table class="table table-striped mt-4 table table-bordered border-primary"  >
+    <thead>
+    <tr>
+    
+    <th>Numero de licencia</th>
+    <th>Fecha expedicion</th>
+    <th>Nombre</th>
+    <th>Celular </th>
+    <th>Especialidad</th>
+    <th>Ciudad</th>
+    <th>Correo</th>
+    <th>Ente </th>
+    <th>acciones</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    require '../conexion.php';
+    require '../dto/especialistaDto.php';
+    require '../dao/especialistaDao.php';
+
+    $eDao = new EspecialistaDao();
+    $allusers = $eDao->listarTodoses();
+    
+    foreach ($allusers as $user) {?>  
+    <tr> 
+    <td> <?php echo $user['numero_licencia'];?>  </td>
+    <td>  <?php echo $user['fecha_expedicion'];?>  </td>
+    <td>  <?php echo $user['nombre'];?>  </td>
+    <td>  <?php echo $user['celular'];?>  </td>
+    <td>  <?php echo $user['especialidad'];?>  </td>
+    <td>  <?php echo $user['ciudad'];?>  </td>
+    <td>  <?php echo $user['correo_electronico'];?>  </td>
+    <td>  <?php echo $user['ente'];?>  </td>
+    
+    
+    </tr>
+  <?php
+    }
+  ?>
+  
+  
+    </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

@@ -1,7 +1,7 @@
 <?php
 
 
-class EnteDto{
+class EspecialistaDto{
     
     private $licencia="";
     private $expedicion="";

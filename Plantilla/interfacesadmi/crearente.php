@@ -280,7 +280,7 @@
       <div class="container-fluid">
           <div class="col-md-9 ">
        
-      <form  action="../controlador/controlador.php" method="POST">
+      <form  action="../controladores/controlador.ente.php" method="POST">
 
 
 
