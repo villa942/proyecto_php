@@ -14,7 +14,7 @@
         <div class="row-2">
             <div class="col-md-6">
             <br><br>
-            <form action="controladores/controlador.vehiculo.php" method="POST" id="form">
+            <form action="../Plantilla/Controladores/controlador.usuariologin.php" method="POST" id="form">
             <br>
                 <h2 class="text-center">Registro Usuario</h2>
                 <br>
@@ -35,19 +35,26 @@
                     </div>
                     <div class="col">
                         <b><label for="">Numero Cedula</label></b>
-                        <input type="date" name="cedula" class="form-control" placeholder="Numero Cedula" aria-label="Last name">
+                        <input type="text" name="cedula" class="form-control" placeholder="Numero Cedula" aria-label="Last name">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <b><label for="">Contraseña</label></b>
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña" aria-label="First name">
+                        <b><label for="">Celular</label></b>
+                        <input type="text" name="celular" class="form-control" placeholder="Celular" aria-label="First name">
                     </div>
+                    <div class="col">
+                        <b><label for="">Contraseña</label></b>
+                        <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" aria-label="First name">
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <b><label for="">Tipo Usuario</label></b>
                     <select class="form-select" name="tipo_usuario">
                     <option value="">Seleccione...</option>
-                        
+                    <option value="Admin">Admin</option>
+                    <option value="Usuario">Usuario</option>
                     </select>
                     </div>
                 </div>
@@ -55,7 +62,7 @@
                 <div>
                 <center>
                     <input type="submit" name="registro" id="registro" value="Registrarse" class="btn btn-primary">
-                    <a href="./Plantilla/" class="btn btn-danger" >Volver</a>
+                    <a href="../Plantilla/" class="btn btn-danger" >Volver</a>
                 </center>
                 <br>
                 </div>
@@ -64,9 +71,20 @@
             
             </div>
         </div>
-            <div class="col-md-1 text-center" style="color:white";>
-                <h4><?php echo $mensaje = $_GET['mensaje'] ?></h4>
-            </div>
+        <div class="col-md-4"></div>
+        <?php
+        if (isset($_GET['mensaje'])) {
+        ?>   
+        <div class="row"><br><br>
+                <div class="col-md-6">
+                <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?>
+                </h4></div>
+                </div>
+            <div class="col-md-5"></div>
+        </div> 
+        <?php
+        }
+        ?>
     </div>
     </center>
 </body>
