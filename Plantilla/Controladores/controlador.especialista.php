@@ -21,6 +21,12 @@ if(isset($_POST['registroes'])){
     $mensaje = $uDao->registrarEspecialista($uDto);
 
     header("Location:../crearespecialista.php?mensaje=".$mensaje);
+}elseif ($_GET['id']!=null) {
+    $uDao = new EspecialistaDao();
+
+    $mensaje = $uDao->eliminarEspecialista($_GET['id']);
+
+    header("Location:../interfacesadmi/especialista.php?mensaje=".$mensaje);
 }
 
 

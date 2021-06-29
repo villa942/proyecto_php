@@ -296,7 +296,7 @@
 <label for="">Numero de licencia de salud</label>
 <input type="text" name="licencia" placeholder="Escriba el numero de licencia "required class="form-control"><br>
 <label for="">Fecha de expedicion de licencia</label>
-<input type="date" name="expedicion"placeholder="Escriba la razon " required class="form-control"><br>
+<input type="date" name="expedicion" placeholder="Escriba la razon " required class="form-control"><br>
 <label for="">Nombre</label>
 <input type="text" name="nombre" placeholder="Escriba el nombre completo "required class="form-control"><br>
 <label for="">Correo</label>

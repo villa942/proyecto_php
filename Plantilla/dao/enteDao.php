@@ -79,6 +79,21 @@
         }
         return $mensaje;
     }
+    //Obtener usuario
+    public function obtenerEnte($nit){
+        $cnn = Conexion::getConexion();
+        $mensaje = "";
+        try {
+            $query= $cnn->prepare('SELECT * FROM usuario_contenido_ente WHERE nit = ?');
+            $query->bindParam(1, $nit);
+            $query->execute();
+            return $query->fetch();
+        } catch (Exception $ex) {
+            echo 'Error'.$ex->getMessage();
+        }
+        $cnn = null;
+        return $mensaje;
+    }
 
  }
  

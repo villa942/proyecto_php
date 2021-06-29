@@ -43,6 +43,19 @@
     }
     
     }
+    public function eliminarEspecialista($numero){
+        $cnn = Conexion::getConexion();
+        $mensaje = "";
+        try {
+            $query = $cnn->prepare("DELETE FROM usuario_especialista WHERE numero_licencia= ?");
+            $query->bindParam(1, $numero);
+            $query->execute();
+            $mensaje = "Registro Eliminado";
+        } catch (Exception $ex) {
+            $mensaje = $ex->getMessage();
+        }
+        return $mensaje;
+    }
 
 
  }

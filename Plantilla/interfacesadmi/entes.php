@@ -25,6 +25,15 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script>
+    function confirmar(){
+        if(confirm('Esta seguro que desea borrar')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -316,7 +325,7 @@
     <td>  <?php echo $user['sitio_web'];?>  </td>
     <td>  <?php echo $user['ciudad'];?>  </td>
     <td>  <?php echo $user['capacidad_pacientes'];?>  </td>
-    <td><a href="modificarente.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
+    <td><a href="modificarente.php?id=<?php echo $user['nit'];?>">Modificar</a></td>
     <td><a href="../controladores/Controlador.ente.php?id=<?php echo $user['nit']; ?>
     " onclick = "return confirmar();" >Eliminar </a></td>    
 
