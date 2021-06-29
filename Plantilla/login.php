@@ -1,3 +1,11 @@
+<!-- <?php
+
+// session_start();
+// if (isset($_SESSION['nombre'])) {
+//     header('Location: ../Login/login.php');
+// }
+
+?> -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +16,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="../Plantilla/Login/css/style1.css">
 
 	</head>
 	<body>
@@ -21,7 +29,7 @@
 							<div class="text w-100">
 								<h2>Bienvenido!</h2>
 								<p>¿No tienes cuenta?</p>
-								<a href="../../registroUsuario.php" class="btn btn-white btn-outline-white">Registrate</a>
+								<a href="registroUsuario.php" class="btn btn-white btn-outline-white">Registrate</a>
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-lg-5">
@@ -30,14 +38,14 @@
 			      			<h3 class="mb-4">Iniciar Sesion</h3>
 			      		</div>
 			      	</div>
-					<form action="../Dashboard/index.html" class="signin-form">
+					<form action="./loginproceso.php" class="signin-form" method="POST">
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Usuario</label>
-			      			<input type="text" class="form-control" placeholder="Numero Cedula" required>
+			      			<input type="text" class="form-control" name="txtUsu" placeholder="Numero Cedula" required>
 			      		</div>
 		            <div class="form-group mb-3">
 		            	<label class="label" for="password">Contraseña</label>
-		              <input type="password" class="form-control" placeholder="Contraseña" required>
+		              <input type="password" class="form-control" name="txtPass" placeholder="Contraseña" required>
 		            </div>
 		            <div class="form-group">
 		            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
@@ -50,10 +58,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="./Login/js/jquery.min.js"></script>
+  <script src="./Login/js/popper.js"></script>
+  <script src="./Login/js/bootstrap.min.js"></script>
+  <script src="./Login/js/main.js"></script>
 
 	</body>
 </html>
