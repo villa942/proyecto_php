@@ -277,63 +277,69 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-          <div class="col-md-9 ">
+          <div class="col-md-12 ">
        
       
+          <form action="../Controladores/controlador.usuariologin.php" method="POST" id="form">
+            <br>
+                <h2 class="text-center">Registro Usuario</h2>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <b><label for="">Nombre</label></b>
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre" required aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <b><label for="">Apellido</label></b>
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido" required aria-label="Last name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <b><label for="">Correo Electronico</label></b>
+                        <input type="text" name="correo_electronico" class="form-control" placeholder="Correo Electronico" required aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <b><label for="">Numero Cedula</label></b>
+                        <input type="text" name="cedula" class="form-control" placeholder="Numero Cedula" required aria-label="Last name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <b><label for="">Celular</label></b>
+                        <input type="text" name="celular" class="form-control" placeholder="Celular" required aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <b><label for="">Contraseña</label></b>
+                        <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" required aria-label="First name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <b><label   for="">Tipo Usuario</label></b>
+                    <select required class="form-select form-control" name="tipo_usuario">
+                    <option value="">Seleccione...</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Usuario">Usuario</option>
+                    </select>
+                    </div>
+                </div>
+                  <br><hr>
+                <div>
+                <center>
+                    <input type="submit" name="registroa" id="registro" value="Registrarse" class="btn btn-primary">
+                   
+                </center>
+                <br>
+                </div>
+                
+            </form>
 
 
 
 
 
 
-<form  action="../controladores/controlador.especialista.php" method="POST">
-<h3 class="text-center">Registro de especialista </h3>
-<br>
-<br>
-
-<br>
-
-<label for="">Numero de licencia de salud</label>
-<input type="text" name="licencia" placeholder="Escriba el numero de licencia "required class="form-control"><br>
-<label for="">Fecha de expedicion de licencia</label>
-<input type="date" name="expedicion"placeholder="Escriba la razon " required class="form-control"><br>
-<label for="">Nombre</label>
-<input type="text" name="nombre" placeholder="Escriba el nombre completo "required class="form-control"><br>
-<label for="">Correo</label>
-<input type="text" name="correo" placeholder="Escriba su correo"required class="form-control"><br>
-<label for="">Celular</label>
-<input type="text" name="celular" placeholder="Escriba el numero de celular"required class="form-control"><br>
-<label for="">Ciudad</label>
-<input type="text" name="ciudad" placeholder="Escriba la ciudad"required class="form-control"><br>
-<label for="">Especialidad</label>
-<input type="text" name="especialidad" placeholder="Escriba la especialidad"required class="form-control"><br>
-<label for="">Ente de salud</label>
-<select class="form-control" name="ente" id="ente">
-<?php
-require '../dao/enteDao.php';
-require '../dto/enteDto.php';
-require '../conexion.php';
-
-
-
-$ente = new EnteDao();
- $listent = $ente->listarTodos();
-foreach ($listent as $ent){
-    echo'<option  value="'.$ent["razon_social"].'"  >'
-    .$ent["razon_social"]," ".
-    '</option>';
-}
-?>
-
-
-</select>
-<br>
-
-<center>
-<input type="submit" href="especialistas.php"name="registroes" id="registro" value="Registrar" class="btn btn-outline-primary">
-</center>
-<br>
-</form>
 </div>
 
       </div><!-- /.container-fluid -->
