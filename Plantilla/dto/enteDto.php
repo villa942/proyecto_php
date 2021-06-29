@@ -38,7 +38,7 @@ class EnteDto{
     }
     
     function setNit($nit){
-        $this->nit = $doc;
+        $this->nit = $nit;
    }
    function setRazon($razon){
     $this->razon = $razon;
