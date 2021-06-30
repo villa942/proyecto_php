@@ -293,7 +293,7 @@
       <button > <a href="crearespecialista.php">Crear especialista</a></button>
 
 
-      <h1>Lista de entes de salud</h1>
+      <h1>Lista especialistas</h1>
     <table class="table table-striped mt-4 table table-bordered border-primary"  >
     <thead>
     <tr>
