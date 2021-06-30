@@ -191,9 +191,9 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="icofont-injection-syringe"></i></div>
-              <h4><a href="">Corona Virus</a></h4>
-              <p>Estamos en la Etapa 3 de la vacunacion y nuestro compromiso es mantenerte informado, consulta la informacion aquí</p>
+              <div class="icon"><i class="icofont-support"></i></div>
+              <h4><a href="../Plantilla/pqrs.php">Califica Nuestro Servicio</a></h4>
+              <p>En esta sección usted podrá radicar, hacer seguimiento y consultar los informes de sus preguntas, quejas, reclamos y sugerencias</p>
             </div>
           </div>
 
@@ -339,26 +339,29 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="../Plantilla/index.html" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="Asunto"  placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                <textarea class="form-control" name="Mensaje" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
+              <center>
+                <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
+
+            </center>
             </form>
 
           </div>

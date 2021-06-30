@@ -55,7 +55,7 @@ elseif (isset($_POST['modificar'])) {
     $uDto->setContraseña($_POST['contraseña']);
     $uDto->setTipousuario($_POST['tipo_usuario']);
 
-    $mensaje = $uDao->registrarUsuarioadmin($uDto);
+    $mensaje = $uDao->registrarUsuario($uDto);
 
     header("Location:../interfacesadmi/crearusuario.php?mensaje=".$mensaje);
 }

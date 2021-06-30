@@ -73,54 +73,27 @@
       <div class="container">
 
         <div class="section-title">
-            <h1 class="text-center">Agendar Citas Particulares</h1>
+            <h1 class="text-center">Dejanos tus inquietudes</h1>
         </div>
 
-        <form action="../Plantilla/Controladores/controlador.citasparticulares.php" method="post" role="form">
+        <form action="../Plantilla/Controladores/controlador.pqrs.php" method="post" role="form">
           <div class="form-row">
-            <div class="col-md-4 form-group">
+            <div class="col-md-6 form-group">
               <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
               <div class="validate"></div>
             </div>
-            <div class="col-md-4 form-group">
-              <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email">
-            </div>
-            <div class="col-md-4 form-group">
-              <input type="tel" class="form-control" name="Telefono"  placeholder="Telefono" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-              <div class="validate"></div>
+            <div class="col-md-6 form-group">
+              <input type="text" class="form-control" name="Asunto"  placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter a valid email">
             </div>
           </div>
-          <div class="form-row">
-            <div class="col-md-4 form-group">
-              <input type="date" name="Fecha" class="form-control"  placeholder="Día de la cita" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-              <div class="validate"></div>
-            </div>
-            <div class="col-md-4 form-group">
-              <select name="CentroMedico"  class="form-control">
-                <option value="">Seleccione Departmento</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
-              <div class="validate"></div>
-            </div>
-            <div class="col-md-4 form-group">
-              <select name="Especialidad"  class="form-control">
-                <option value="">Seleccione Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-              <div class="validate"></div>
-            </div>
-          </div>
-
           <div class="form-group">
             <textarea class="form-control" name="Mensaje" rows="5" placeholder="Mensaje (Opcional)"></textarea>
             <div class="validate"></div>
           </div>
+          <label for="customRange2" class="form-label">Nivel de calificacion</label>
+            <input type="range" class="form-range" min="0" max="5" id="customRange2">
           <center>
-              <input type="submit" name="registro" id="registro" value="Agendar Cita" class="btn btn-primary">
+              <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
               <a href="../Plantilla/" class="btn btn-danger" >Volver</a>
             </center>
         </form>

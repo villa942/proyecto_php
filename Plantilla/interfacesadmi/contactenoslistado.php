@@ -220,7 +220,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Consultar Nuevos Contactos</p>
                 </a>
@@ -259,22 +259,59 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
+        
+      <h1>Contactos</h1>
+        <table class="table table-striped mt-4 table table-bordered border-primary"  >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Asunto</th>
+                    <th>Mensaje</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+        <tbody>
+            <?php
+            require '../conexion.php';
+            require '../Dao/contactenosDao.php';
+            require '../Dto/contactenosDto.php';
+
+            $cDao = new ContactenosDao();
+            $allusers = $cDao->listarTodos();
             
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
+            foreach ($allusers as $user) {?>  
+            <tr> 
+            <td>  <?php echo $user['idPqrs'];?>  </td>
+            <td>  <?php echo $user['Nombre'];?>  </td>
+            <td>  <?php echo $user['Correo'];?>  </td>
+            <td>  <?php echo $user['Asunto'];?>  </td>
+            <td>  <?php echo $user['Mensaje'];?>  </td>
+            <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
+            <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+            " onclick = "return confirmar();" >Eliminar </a></td>    
+            </tr>
+        <?php
+            }
+        ?>
+    </tbody>
+    </table>
+    <br><br>
+    <?php
+
+    if(isset($_GET['mensaje'])){
+        ?>
+    <div class="row"><br><br>
+    <div class="col-md-5"></div>
+    <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
+    <div class="col-md-5"></div>
+    </div>
+
+    <?php
+    }
+    ?>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
