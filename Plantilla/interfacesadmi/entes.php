@@ -181,7 +181,6 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../Dashboard/admin.html" class="brand-link">
@@ -243,7 +242,6 @@
                 <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Consultar Pqrs</p>
-<<<<<<< HEAD
                 </a>
               </li>
             </ul>
@@ -261,37 +259,23 @@
                 <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Consultar Nuevos Contactos</p>
-=======
->>>>>>> ec06e8d324186361fb7dc3d709bacb36b59340e4
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-<<<<<<< HEAD
               <i class="nav-icon fas fa-archive"></i>
               <p>
                 Enfermedades
-=======
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Contactos
->>>>>>> ec06e8d324186361fb7dc3d709bacb36b59340e4
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-<<<<<<< HEAD
-                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
+                <a href="../interfacesadmi/enfermedades.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar enfermedades</p>
-=======
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Consultar Nuevos Contactos</p>
->>>>>>> ec06e8d324186361fb7dc3d709bacb36b59340e4
                 </a>
               </li>
             </ul>

@@ -332,11 +332,7 @@
             <td>  <?php echo $user['Nombre'];?>  </td>
             <td>  <?php echo $user['Asunto'];?>  </td>
             <td>  <?php echo $user['Mensaje'];?>  </td>
-<<<<<<< HEAD
             <td>  <?php echo $user['Calificacion'];?>  </td>
-=======
-            <td><a href="modificarPqrs.php?id=<?php echo $user['idPqrs'];?>">Modificar</a></td>
->>>>>>> ec06e8d324186361fb7dc3d709bacb36b59340e4
             <td><a href="../controladores/controlador.pqrs.php?id=<?php echo $user['idPqrs']; ?>
             " onclick = "return confirmar();" >Eliminar </a></td>    
             </tr>
