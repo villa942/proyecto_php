@@ -319,7 +319,7 @@
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['id_usuario'];?>  </td>
+    <td> <?php echo $user['idUsuario'];?>  </td>
     <td>  <?php echo $user['cedula'];?>  </td>
     <td>  <?php echo $user['nombre'];?>  </td>
     <td>  <?php echo $user['apellido'];?>  </td>
