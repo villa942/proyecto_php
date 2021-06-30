@@ -157,6 +157,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../Dashboard/admin.html" class="brand-link">
+
       <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
@@ -170,7 +171,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="../Dashboard/admin.html" class="d-block">Perfil</a>
+          <a href="../Dashboard/index.html" class="d-block">Perfil</a>
         </div>
       </div>
 
@@ -180,11 +181,29 @@
           <li class="nav-header">Administrador</li>
           <li class="nav-item">
             <a href="../interfacesadmi/usuarios.php" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-user-circle"></i>
+              <!-- <i class="nav-icon far fa-calendar-alt"></i> -->
               <p>
                 Usuarios
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Citas
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agendar Citas</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="../interfacesadmi/entes.php" class="nav-link">
@@ -246,13 +265,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
+                <a href="../interfacesadmi/enfermedades.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar enfermedades</p>
                 </a>
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Planes de Salud
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../interfacesadmi/enfermedades.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Solicitud de planes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
           
           
         </ul>
