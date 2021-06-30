@@ -25,6 +25,15 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script>
+    function confirmar(){
+        if(confirm('Esta seguro que desea borrar')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -297,7 +306,9 @@
     <th>Ciudad</th>
     <th>Correo</th>
     <th>Ente </th>
-    <th>acciones</th>
+    
+    <th>Modificar</th>
+    <th>Eliminar</th>
 
     </tr>
     </thead>
@@ -320,6 +331,10 @@
     <td>  <?php echo $user['ciudad'];?>  </td>
     <td>  <?php echo $user['correo_electronico'];?>  </td>
     <td>  <?php echo $user['ente'];?>  </td>
+    <td><a href="modificarespecialista.php?id=<?php echo $user['numero_licencia'];?>">Modificar</a></td>
+    <td><a href="../controladores/controlador.especialista.php?id=<?php echo $user['numero_licencia']; ?>
+    " onclick = "return confirmar();" >Eliminar </a></td>    
+
     
     
     </tr>
@@ -331,7 +346,19 @@
     </tbody>
     </table>
 
+    <?php
 
+if(isset($_GET['mensaje'])){
+    ?>
+<div class="row"><br><br>
+<div class="col-md-5"></div>
+<div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
+<div class="col-md-5"></div>
+</div>
+
+<?php
+}
+?>
 
 
 

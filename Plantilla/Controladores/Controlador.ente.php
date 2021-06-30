@@ -28,8 +28,8 @@ if(isset($_POST['registroe'])){
     header("Location:../interfacesadmi/entes.php?mensaje=".$mensaje);
 }
 elseif (isset($_POST['modificar'])) {
-    $uDao = new EnteLoginDao();
-    $uDto = new EnteLoginDto();
+    $uDao = new EnteDao();
+    $uDto = new EnteDto();
 
     $uDto->setNit($_POST['nit']);
     $uDto->setRazon($_POST['razon_social']);
@@ -39,7 +39,7 @@ elseif (isset($_POST['modificar'])) {
     $uDto->setCiudad($_POST['ciudad']);
     $uDto->setCapacidad($_POST['capacidad_pacientes']);
 
-    $mensaje = $uDao->modificarUsuario($uDto);
+    $mensaje = $uDao->modificarEnte($uDto);
     header("Location:../interfacesadmi/entes.php?mensaje=".$mensaje);
 
 }

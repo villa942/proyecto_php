@@ -283,7 +283,7 @@
 
 
 <form  action="../controladores/controlador.usuariologin.php" method="POST">
-<h3 class="text-center">Modificar de especialista </h3>
+<h3 class="text-center">Modificar usuarios </h3>
 
 <?php
     require '../dao/UsuarioLoginDao.php';
