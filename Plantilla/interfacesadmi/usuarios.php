@@ -233,27 +233,32 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Mailbox
+                Pqrs
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Consultar Pqrs</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Contactos
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Consultar Nuevos Contactos</p>
                 </a>
               </li>
             </ul>
@@ -319,15 +324,15 @@
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['id_usuario'];?>  </td>
+    <td> <?php echo $user['idUsuario'];?>  </td>
     <td>  <?php echo $user['cedula'];?>  </td>
     <td>  <?php echo $user['nombre'];?>  </td>
     <td>  <?php echo $user['apellido'];?>  </td>
     <td>  <?php echo $user['correo_electronico'];?>  </td>
     <td>  <?php echo $user['celular'];?>  </td>
     <td>  <?php echo $user['tipo_usuario'];?>  </td>
-    <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
-    <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+    <td><a href="modificarusuario.php?id=<?php echo $user['idUsuario'];?>">Modificar</a></td>
+    <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['idUsuario']; ?>
     " onclick = "return confirmar();" >Eliminar </a></td>    
 
     

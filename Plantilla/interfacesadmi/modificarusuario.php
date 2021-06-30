@@ -223,27 +223,32 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Mailbox
+                Pqrs
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Consultar Pqrs</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Contactos
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Consultar Nuevos Contactos</p>
                 </a>
               </li>
             </ul>
@@ -296,7 +301,7 @@
     }
     ?>
 <label for="">Id</label>
-<input type="text" value="<?php echo $usuario['id_usuario'] ?>" name="id_usuario" placeholder="Escriba el numero de licencia "required class="form-control"><br>
+<input type="text" value="<?php echo $usuario['idUsuario'] ?>" name="id_usuario" placeholder="Escriba el numero de licencia "required class="form-control"><br>
 
 <label for="">Nombre</label>
 <input type="text" value="<?php echo $usuario['nombre'] ?>" name="nombre" placeholder="Escriba el numero de licencia "required class="form-control"><br>

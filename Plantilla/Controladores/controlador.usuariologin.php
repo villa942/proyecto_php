@@ -31,7 +31,7 @@ elseif (isset($_POST['modificar'])) {
     $uDao = new UsuarioLoginDao();
     $uDto = new UsuarioLoginDto();
 
-    $uDto->setIdUsuario($_POST['id_usuario']);
+    $uDto->setIdUsuario($_POST['idUsuario']);
     $uDto->setNombre($_POST['nombre']);
     $uDto->setApellido($_POST['apellido']);
     $uDto->setCorreo($_POST['correo_electronico']);
@@ -46,7 +46,7 @@ elseif (isset($_POST['modificar'])) {
     $uDao = new UsuarioLoginDao();
     $uDto = new UsuarioLoginDto();
 
-    $uDto->setIdUsuario($_POST['id_usuario']);
+    $uDto->setIdUsuario($_POST['idUsuario']);
     $uDto->setNombre($_POST['nombre']);
     $uDto->setApellido($_POST['apellido']);
     $uDto->setCorreo($_POST['correo_electronico']);

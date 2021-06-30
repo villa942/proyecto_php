@@ -302,7 +302,7 @@ foreach ($listent as $ent){
 <br>
 
 <center>
-<input type="submit" href="especialistas.php"name="registroes" id="registro" value="Registrar" class="btn btn-outline-primary">
+<input type="submit" href="especialistas.php"name="registrocon" id="registro" value="Registrar" class="btn btn-outline-primary">
 </center>
 <br>
 </form>

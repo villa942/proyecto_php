@@ -205,14 +205,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">EXAMPLES</li>
-          <li class="nav-item">
-            <a href="usuarios.php" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Usuarios
-              </p>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a href="entes.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
@@ -229,33 +222,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Mailbox
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
+          
             </ul>
           </li>
           
@@ -297,12 +264,14 @@
     <tr>
     
     <th>Numero de licencia</th>
-    <th>Fecha expedicion</th>
+   
     <th>Nombre</th>
+    <th>Correo</th>
     <th>Celular </th>
     <th>Especialidad</th>
     <th>Ciudad</th>
-    <th>Correo</th>
+    
+    <th>Fecha expedicion</th>
     <th>Ente </th>
     
 
@@ -320,12 +289,14 @@
     foreach ($allusers as $user) {?>  
     <tr> 
     <td> <?php echo $user['numero_licencia'];?>  </td>
-    <td>  <?php echo $user['fecha_expedicion'];?>  </td>
+    
     <td>  <?php echo $user['nombre'];?>  </td>
+    <td>  <?php echo $user['correo_electronico'];?>  </td>
     <td>  <?php echo $user['celular'];?>  </td>
     <td>  <?php echo $user['especialidad'];?>  </td>
     <td>  <?php echo $user['ciudad'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
+    <td>  <?php echo $user['fecha_expedicion'];?>  </td>
+    
     <td>  <?php echo $user['ente'];?>  </td>
     
     

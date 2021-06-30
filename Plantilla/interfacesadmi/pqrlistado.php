@@ -25,6 +25,15 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script>
+    function confirmar(){
+        if(confirm('Esta seguro que desea borrar')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -275,8 +284,8 @@
         <tbody>
             <?php
             require '../conexion.php';
-            require '../Dao/pqrsDao.php';
-            require '../Dto/pqrsDto.php';
+            require '../dao/pqrsDao.php';
+            require '../dto/pqrsDto.php';
 
             $pDao = new PqrsDao();
             $allusers = $pDao->listarTodos();
@@ -287,8 +296,8 @@
             <td>  <?php echo $user['Nombre'];?>  </td>
             <td>  <?php echo $user['Asunto'];?>  </td>
             <td>  <?php echo $user['Mensaje'];?>  </td>
-            <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
-            <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+            <td><a href="modificarPqrs.php?id=<?php echo $user['idPqrs'];?>">Modificar</a></td>
+            <td><a href="../controladores/controlador.pqrs.php?id=<?php echo $user['idPqrs']; ?>
             " onclick = "return confirmar();" >Eliminar </a></td>    
             </tr>
         <?php
