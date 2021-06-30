@@ -15,6 +15,7 @@
  if ($datos === false) {
      header('Location: login.php');
  }elseif ($sentencia->rowCount() == 1) {
+     
      $_SESSION['nombre'] = $datos->cedula;
      header('Location: Dashboard/admin.html');
  }
