@@ -277,8 +277,7 @@
     <th>Correo</th>
     <th>Celular</th>
     <th>Tipo usuario</th>
-    <th>Modificar</th>
-    <th>Eliminar</th>
+    
     </tr>
     </thead>
     <tbody>
@@ -292,17 +291,14 @@
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['id_usuario'];?>  </td>
+    <td> <?php echo $user['idUsuario'];?>  </td>
     <td>  <?php echo $user['cedula'];?>  </td>
     <td>  <?php echo $user['nombre'];?>  </td>
     <td>  <?php echo $user['apellido'];?>  </td>
     <td>  <?php echo $user['correo_electronico'];?>  </td>
     <td>  <?php echo $user['celular'];?>  </td>
     <td>  <?php echo $user['tipo_usuario'];?>  </td>
-    <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
-    <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
-    " onclick = "return confirmar();" >Eliminar </a></td>    
-
+   
     
     </tr>
   <?php

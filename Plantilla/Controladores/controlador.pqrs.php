@@ -35,7 +35,7 @@ elseif (isset($_POST['modificar'])) {
     $pDto->setCalificacion($_POST['Calificacion']);
 
     $mensaje = $cDao->modificarPqrs($pDto);
-    header("Location:../interfacesadmi/usuarios.php?mensaje=".$mensaje);
+    header("Location:../interfacesadmi/pqrlistado.php?mensaje=".$mensaje);
 }
 
 ?>

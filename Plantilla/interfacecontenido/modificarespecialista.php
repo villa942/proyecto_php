@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,15 +26,6 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <script>
-    function confirmar(){
-        if(confirm('Esta seguro que desea borrar')){
-            return true;
-        }else{
-            return false;
-        }
-    }
-   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -47,11 +39,9 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../Dashboard/normal.html" class="nav-link">Home</a>
+        <a href="index3.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
     <!-- Right navbar links -->
@@ -233,27 +223,32 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Mailbox
+                Pqrs
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Consultar Pqrs</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Contactos
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Consultar Nuevos Contactos</p>
                 </a>
               </li>
             </ul>
@@ -289,82 +284,67 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
+          <div class="col-md-9 ">
 
-      <h1>Lista de usuarios</h1>
-    <table class="table table-striped mt-4 table table-bordered border-primary"  >
-    <thead>
-    <tr>
-    
-    <th>Id</th>
-    <th>Cedula</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Correo</th>
-    <th>Celular</th>
-    <th>Tipo usuario</th>
-    
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    require '../conexion.php';
+
+<form  action="../controladores/controlador.especialista.php" method="POST">
+<h3 class="text-center">Modificar usuarios </h3>
+
+<?php
+    require '../dao/especialistaDao.php';
     require '../dto/UsuarioLoginDto.php';
-    require '../dao/UsuarioLoginDao.php';
+    require '../conexion.php';
+    if($_GET['id']!=NULL){
+        $uDao = new EspecialistaDao();
+        $usuario = $uDao->obtenerEspecialista($_GET['id']);
 
-    $eDao = new UsuarioLoginDao();
-    $allusers = $eDao->listarTodos();
-    
-    foreach ($allusers as $user) {?>  
-    <tr> 
-    <td> <?php echo $user['id_usuario'];?>  </td>
-    <td>  <?php echo $user['cedula'];?>  </td>
-    <td>  <?php echo $user['nombre'];?>  </td>
-    <td>  <?php echo $user['apellido'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
-    <td>  <?php echo $user['celular'];?>  </td>
-    <td>  <?php echo $user['tipo_usuario'];?>  </td>
-   
-    
-    </tr>
-  <?php
-    }
-  ?>
-  
-  
-    </tbody>
-    </table>
-    <br><br>
-    <?php
-
-    if(isset($_GET['mensaje'])){
-        ?>
-    <div class="row"><br><br>
-    <div class="col-md-5"></div>
-    <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
-    <div class="col-md-5"></div>
-    </div>
-
-    <?php
     }
     ?>
+<label for="">Numero licencia</label>
+<input type="text" value="<?php echo $usuario['numero_licencia'] ?>" name="licencia" placeholder="Escriba el numero de licencia "required class="form-control"><br>
 
+<label for="">Fecha de expedicion</label>
+<input type="date" value="<?php echo $usuario['fecha_expedicion'] ?>" name="expedicion" placeholder="Escriba el numero de licencia "required class="form-control"><br>
+<label for="">Nombre</label>
+<input type="text" value="<?php echo $usuario['nombre'] ?>" name="nombre"placeholder="Escriba la razon " required class="form-control"><br>
+<label for="">Especialidad</label>
+<input type="text" value="<?php echo $usuario['especialidad'] ?>" name="especialidad" placeholder="Escriba el nombre completo "required class="form-control"><br>
+<label for="">Correo</label>
+<input type="text" value="<?php echo $usuario['correo_electronico'] ?>" name="correo" placeholder="Escriba su correo"required class="form-control"><br>
+<label for="">Celular</label>
+<input type="text" value="<?php echo $usuario['celular'] ?>" name="celular" placeholder="Escriba el numero de celular"required class="form-control"><br>
+<label for="">Ciudad</label>
+<input type="text" value="<?php echo $usuario['ciudad'] ?>" name="ciudad" placeholder="Escriba la ciudad"required class="form-control"><br>
+<label for="">Tipo Usuario</label></b>
+                    <select class="form-select form-control" value="<?php echo $usuario['ente'] ?>" name="tipousuario">
+                    <option value="">Seleccione...</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Usuario">Usuario</option>
+                    </select>
 
+</select>
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<center>
+<input type="submit" href="usuarios.php"name="modificar" id="modificar" value="Modificar" class="btn btn-outline-primary">
+</center>
+<br>
+</form>
+</div>
 
       </div><!-- /.container-fluid -->
+      <?php
+if(isset($_GET['mensaje'])){
+    ?>
+    <div class="row"><br><br>
+        <div class="col-md-5"></div>
+        <div class="col-md-1 "><h4><?php echo $mensaje = $_GET['mensaje'] ?>
+            </h4></div>
+    <div class="col-md-5"></div>
+    </div>
+    <?php
+}
+?>
     </section>
     <!-- /.content -->
   </div>
@@ -416,3 +396,9 @@
 <script src="dist/js/pages/dashboard.js"></script>
 </body>
 </html>
+
+
+
+
+
+
