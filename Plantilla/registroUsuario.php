@@ -53,8 +53,8 @@
                         <b><label for="">Tipo Usuario</label></b>
                     <select class="form-select" name="tipo_usuario">
                     <option value="">Seleccione...</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Usuario">Usuario</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Usuario</option>
                     </select>
                     </div>
                 </div>

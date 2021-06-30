@@ -183,8 +183,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">RVS</span>
+    <a href="../Dashboard/admin.html" class="brand-link">
+    <center>
+        <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
+      </center>
     </a>
 
     <!-- Sidebar -->
@@ -317,7 +319,7 @@
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['id_usuario'];?>  </td>
+    <td> <?php echo $user['idUsuario'];?>  </td>
     <td>  <?php echo $user['cedula'];?>  </td>
     <td>  <?php echo $user['nombre'];?>  </td>
     <td>  <?php echo $user['apellido'];?>  </td>
