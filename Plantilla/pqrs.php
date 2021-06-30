@@ -90,11 +90,34 @@
             <textarea class="form-control" name="Mensaje" rows="5" placeholder="Mensaje (Opcional)"></textarea>
             <div class="validate"></div>
           </div>
-          <label for="customRange2" class="form-label">Nivel de calificacion</label>
-            <input type="range" class="form-range" min="0" max="5" id="customRange2">
+          <label for="" class="form-label">Nivel de calificacion</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Calificacion" value="Muy Bueno">
+            <label>
+              Muy Bueno
+            </label>
+            </input>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Calificacion" value="Bueno">
+            <label>
+            Bueno
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Calificacion" value="Malo">
+            <label>
+              Malo
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Calificacion" value="Malo">
+            <label>
+              Muy Malo
+            </label>
+          </div>
           <center>
               <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
-              <a href="../Plantilla/" class="btn btn-danger" >Volver</a>
             </center>
         </form>
         <div class="col-md-4"></div>

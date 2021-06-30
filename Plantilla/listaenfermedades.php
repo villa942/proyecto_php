@@ -25,6 +25,7 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Plantilla/Dashboard/dist/css/adminlte.min.css">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -73,7 +74,7 @@
   <center>
     <h1>Enfermedades</h1>
     <div class="container">
-    <table class="table table-striped" id="tabla">
+    <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr class="text-center">
                 <th>Nombre Enfermedad</th>
@@ -117,15 +118,6 @@
     <?php
         }
     ?>
-    <center>
-        <div>
-             <a href="../Plantilla/enfermedades.php" class="appointment-btn scrollto">Registrar nueva enfermedad</a>
-        </div>
-        
-
-    </div>
-
-    </center>
     
   </main>
 
@@ -170,12 +162,27 @@
   <script src="assets/vendor/counterup/counterup.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
+  <script src="../Plantilla/Dashboard/plugins/jquery/jquery.min.js"></script>
+  <script src="../Plantilla/Dashboard/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/jszip/jszip.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../Plantilla/Dashboard/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="../Plantilla/Dashboard/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../Plantilla/Dashboard/dist/js/demo.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-<style>
+<!-- <style>
     body{
         background-image: url("img/fondo4.jpg");
         background-position: center center;
@@ -189,4 +196,12 @@
         border-width: 3px;
     }
     
-</style>
+</style> -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+  });
+</script>

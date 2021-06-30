@@ -147,7 +147,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
+    <a href="../Dashboard/admin.html" class="brand-link">
       <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
@@ -161,14 +161,14 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="../Dashboard/index.html" class="d-block">Perfil</a>
+          <a href="../Dashboard/admin.html" class="d-block">Perfil</a>
         </div>
       </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">Administrador</li>
           <li class="nav-item">
             <a href="../interfacesadmi/usuarios.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -195,7 +195,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-question-circle"></i>
               <p>
                 Pqrs
                 <i class="fas fa-angle-left right"></i>
@@ -212,7 +212,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-id-card-alt"></i>
               <p>
                 Contactos
                 <i class="fas fa-angle-left right"></i>
@@ -223,6 +223,23 @@
                 <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Consultar Nuevos Contactos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
+              <p>
+                Enfermedades
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar enfermedades</p>
                 </a>
               </li>
             </ul>
@@ -259,8 +276,27 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
-      <h1>Lista de usuarios</h1>
+      <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>PQRS Usuarios </h1>
+          </div>
+          <div class="col-sm-6">
+          <?php
+
+            if(isset($_GET['mensaje'])){
+                ?>
+            <div class="row"><br><br>
+            <div class="col-md-5"></div>
+            <div class="col-md-6 text-center alert alert-success" role="alert"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
+            <div class="col-md-5"></div>
+            </div>
+
+            <?php
+            }
+            ?>
+          </div>
+      </div>
+      
         <table class="table table-striped mt-4 table table-bordered border-primary"  >
             <thead>
                 <tr>
@@ -268,7 +304,7 @@
                     <th>Nombre</th>
                     <th>Asunto</th>
                     <th>Mensaje</th>
-                    <th>Modificar</th>
+                    <th>Calificacion</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -287,8 +323,8 @@
             <td>  <?php echo $user['Nombre'];?>  </td>
             <td>  <?php echo $user['Asunto'];?>  </td>
             <td>  <?php echo $user['Mensaje'];?>  </td>
-            <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
-            <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+            <td>  <?php echo $user['Calificacion'];?>  </td>
+            <td><a href="../controladores/controlador.pqrs.php?id=<?php echo $user['idPqrs']; ?>
             " onclick = "return confirmar();" >Eliminar </a></td>    
             </tr>
         <?php
@@ -297,19 +333,7 @@
     </tbody>
     </table>
     <br><br>
-    <?php
-
-    if(isset($_GET['mensaje'])){
-        ?>
-    <div class="row"><br><br>
-    <div class="col-md-5"></div>
-    <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
-    <div class="col-md-5"></div>
-    </div>
-
-    <?php
-    }
-    ?>
+    
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

@@ -97,19 +97,34 @@
             </div>
             <div class="col-md-4 form-group">
               <select name="CentroMedico"  class="form-control">
-                <option value="">Seleccione Departmento</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
+                <option value="">Centro Medico</option>
+                <option value="Centro Médico Roosevelt">Centro Médico Roosevelt</option>
+                <option value="Centro Médico Calí">Centro Médico Calí</option>
+                <option value="Centro Médico Flora Industrial">Centro Médico Flora Industrial</option>
+                <option value="Centro Médico Prados del Norte">Centro Médico Prados del Norte</option>
+                <option value="Centro Médico Tequendama">Centro Médico Tequendama</option>
+                <option value="Centro Médico Versalles">Centro Médico Versalles</option>
+                <option value="Unidad de Urgencias Calí">Unidad de Urgencias Calí</option>
               </select>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group">
               <select name="Especialidad"  class="form-control">
-                <option value="">Seleccione Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
+                <option value="">Seleccione Especialidad</option>
+                <?php
+                            require '../Plantilla/Dao/especialistaDao.php';
+                            require '../Plantilla/Dto/especialistaDto.php';
+                            require '../Plantilla/conexion.php';
+
+                            $con = Conexion::getConexion();
+                            $sql=("SELECT especialidad FROM usuario_especialista");
+                            $stmt =$con->prepare($sql);
+                            $result =$stmt->execute();
+                            $row=$stmt->fetchAll(\PDO::FETCH_OBJ);
+                            foreach($row as $especialidad){
+                        ?>
+                            <option value="<?php print($especialidad->especialidad)?>"><?php print($especialidad->especialidad);?></option>
+                        <?php } ?>
               </select>
               <div class="validate"></div>
             </div>
@@ -121,16 +136,16 @@
           </div>
           <center>
               <input type="submit" name="registro" id="registro" value="Agendar Cita" class="btn btn-primary">
-              <a href="../Plantilla/" class="btn btn-danger" >Volver</a>
             </center>
         </form>
+        <br>
         <div class="col-md-4"></div>
         <?php
         if (isset($_GET['mensaje'])) {
         ?>   
         <div class="row"><br><br>
-                <div class="col-md-6">
-                <div class="col-md-6 text-center alert alert-success" role="alert"><h4><?php echo $mensaje = $_GET['mensaje'] ?>
+                <div class="col-md-12">
+                <div class="col-md-12 text-center alert alert-success" role="alert"><h4><?php echo $mensaje = $_GET['mensaje'] ?>
                 </h4></div>
                 </div>
             <div class="col-md-5"></div>

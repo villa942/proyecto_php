@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -25,7 +26,7 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -87,7 +88,9 @@
                     <h1 class="text-center">$250.000</h1>
                 </div>
                 <div class="card-footer">
-                    <center><button class="btn btn-primary">Me interesa</button></center>
+                    <center>        
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Me interesa</button>
+                    </center>
                 </div>
                 </div>
             </div>
@@ -104,7 +107,9 @@
                     <h1 class="text-center">$187.000</h1>
                 </div>
                 <div class="card-footer">
-                    <center><button class="btn btn-primary">Me interesa</button></center>
+                    <center>        
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@fat">Me interesa</button>
+                    </center>
                 </div>
                 </div>
             </div>
@@ -120,16 +125,198 @@
                     <h1 class="text-center">$150.000</h1>
                 </div>
                 <div class="card-footer">
-                    <center><button class="btn btn-primary">Me interesa</button></center>
+                    <center>   
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Me interesa</button>
+                    </center>
                 </div>
                 </div>
             </div>
             </div>
         </div>
         <br><br>
-        <center>
-        <a href="../Plantilla/" class="btn btn-danger" >Regresar</a>   
-        </center>
+       <!-- Modales -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <center>
+              <div class="bg-primary" style="padding: 15px;">
+                <h3 style="color: white; " class="fw-bold">PLAN DE SALUD</h3>
+              </div>
+              </center>
+              <div class="modal-body">
+                <form action="planesSalud.php" method="POST">
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Tipo Documento</label>
+                  <select name=""  class="form-select">
+                    <option value="">Tipo Documento</option>
+                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                    <option value="Cédula de extranjería">Cédula de extranjería</option>
+                    <option value="N.I.T">N.I.T</option>
+                  </select>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Numero Documento</label>
+                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Nombre</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Correo Electronico</label>
+                    <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Numero Celular</label>
+                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Plan Elegido</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Diamante" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <center>
+                  <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
+                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
+                </center>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Model 2 -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <center>
+              <div class="bg-primary" style="padding: 15px;">
+                <h3 style="color: white; " class="fw-bold">PLAN DE SALUD</h3>
+              </div>
+              </center>
+              <div class="modal-body">
+                <form action="planesSalud.php" method="POST">
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Tipo Documento</label>
+                  <select name=""  class="form-select">
+                    <option value="">Tipo Documento</option>
+                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                    <option value="Cédula de extranjería">Cédula de extranjería</option>
+                    <option value="N.I.T">N.I.T</option>
+                  </select>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Numero Documento</label>
+                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Nombre</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Correo Electronico</label>
+                    <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Numero Celular</label>
+                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Plan Elegido</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Zafiro" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <center>
+                  <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
+                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
+                </center>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Model 3 -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <center>
+              <div class="bg-primary" style="padding: 15px;">
+                <h3 style="color: white; " class="fw-bold">PLAN DE SALUD</h3>
+              </div>
+              </center>
+              <div class="modal-body">
+                <form action="planesSalud.php" method="POST">
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Tipo Documento</label>
+                  <select name=""  class="form-select">
+                    <option value="">Tipo Documento</option>
+                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                    <option value="Cédula de extranjería">Cédula de extranjería</option>
+                    <option value="N.I.T">N.I.T</option>
+                  </select>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Numero Documento</label>
+                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Nombre</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder">Correo Electronico</label>
+                    <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Numero Celular</label>
+                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="" class="fw-bolder text-center">Plan Elegido</label>
+                    <input type="text" name="Nombre" class="form-control"  placeholder="Esmeralda" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <center>
+                  <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
+                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
+                </center>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
   </main>
 

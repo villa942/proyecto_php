@@ -15,7 +15,7 @@ if (isset($_POST['registro'])) {
 
     $mensaje = $cDao->registrarContacto($cDto);
 
-    header("Location:../index.html?mensaje=".$mensaje);
+    header("Location:../contactenos.php?mensaje=".$mensaje);
 }
 elseif ($_GET['id']!=null) {
     $cDao = new  ContactenosDao();

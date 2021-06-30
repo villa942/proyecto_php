@@ -181,10 +181,11 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
+  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../Dashboard/admin.html" class="brand-link">
-    <center>
+      <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
     </a>
@@ -197,16 +198,16 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Perfil</a>
+          <a href="../Dashboard/admin.html" class="d-block">Perfil</a>
         </div>
       </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">Administrador</li>
           <li class="nav-item">
-            <a href="usuarios.php" class="nav-link">
+            <a href="../interfacesadmi/usuarios.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Usuarios
@@ -214,7 +215,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="entes.php" class="nav-link">
+            <a href="../interfacesadmi/entes.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Entes de salud
@@ -222,7 +223,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="especialistas.php" class="nav-link">
+            <a href="../interfacesadmi/especialistas.php" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Especialistas
@@ -231,29 +232,51 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-question-circle"></i>
               <p>
-                Mailbox
+                Pqrs
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="../interfacesadmi/pqrlistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Consultar Pqrs</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-id-card-alt"></i>
+              <p>
+                Contactos
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                  <p>Consultar Nuevos Contactos</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
+              <p>
+                Enfermedades
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Registrar enfermedades</p>
                 </a>
               </li>
             </ul>

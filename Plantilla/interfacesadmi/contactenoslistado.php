@@ -147,7 +147,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="admin.html" class="brand-link">
+    <a href="../Dashboard/admin.html" class="brand-link">
       <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
@@ -161,14 +161,14 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="../Dashboard/index.html" class="d-block">Perfil</a>
+          <a href="../Dashboard/admin.html" class="d-block">Perfil</a>
         </div>
       </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">Administrador</li>
           <li class="nav-item">
             <a href="../interfacesadmi/usuarios.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -195,7 +195,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-question-circle"></i>
               <p>
                 Pqrs
                 <i class="fas fa-angle-left right"></i>
@@ -212,7 +212,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-id-card-alt"></i>
               <p>
                 Contactos
                 <i class="fas fa-angle-left right"></i>
@@ -223,6 +223,23 @@
                 <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Consultar Nuevos Contactos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
+              <p>
+                Enfermedades
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../interfacesadmi/contactenoslistado.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar enfermedades</p>
                 </a>
               </li>
             </ul>
@@ -284,7 +301,7 @@
             
             foreach ($allusers as $user) {?>  
             <tr> 
-            <td>  <?php echo $user['idPqrs'];?>  </td>
+            <td>  <?php echo $user['idContacto'];?>  </td>
             <td>  <?php echo $user['Nombre'];?>  </td>
             <td>  <?php echo $user['Correo'];?>  </td>
             <td>  <?php echo $user['Asunto'];?>  </td>

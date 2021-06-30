@@ -5,11 +5,12 @@ class PqrsDao{
         $cnn=Conexion::getConexion();
         $mensaje ="";
         try {
-            $query = $cnn->prepare("INSERT INTO pqrs values (?,?,?,?)");
+            $query = $cnn->prepare("INSERT INTO pqrs values (?,?,?,?,?)");
             $query->bindParam(1,$pqrsDto->getIdPqrs());
             $query->bindParam(2,$pqrsDto->getNombre());
             $query->bindParam(3,$pqrsDto->getAsunto());
             $query->bindParam(4,$pqrsDto->getMensaje());
+            $query->bindParam(5,$pqrsDto->getCalificacion());
 
 
             $query->execute();
@@ -26,12 +27,13 @@ class PqrsDao{
         $cnn = Conexion ::getConexion();
         $mensaje = "";
         try {
-            $query= $cnn->prepare('UPDATE pqrs SET Nombre=?, Asunto=?,  Mensaje=? WHERE idPqrs=?');
+            $query= $cnn->prepare('UPDATE pqrs SET Nombre=?, Asunto=?,  Mensaje=?, Calificacion=? WHERE idPqrs=?');
             
             $query->bindParam(1,$pqrsDto->getIdPqrs());
             $query->bindParam(2,$pqrsDto->getNombre());
             $query->bindParam(3,$pqrsDto->getAsunto());
             $query->bindParam(4,$pqrsDto->getMensaje());
+            $query->bindParam(5,$pqrsDto->getCalificacion());
             $query->execute();
             $mensaje = "Registro Actualizado";
         } catch (Exception $ex) {

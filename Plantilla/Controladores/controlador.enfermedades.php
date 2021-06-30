@@ -15,7 +15,7 @@ if (isset($_POST['registro'])) {
 
     $mensaje = $eDao->registrarEnfermedad($eDto);
 
-    header("Location:../enfermedades.php?mensaje=".$mensaje);
+    header("Location:../interfacesadmi/enfermedades.php?mensaje=".$mensaje);
 }
 elseif ($_GET['id']!=null) {
     $eDao = new EnfermedadesDao();

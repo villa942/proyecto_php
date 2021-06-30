@@ -11,6 +11,7 @@ if (isset($_POST['registro'])) {
     $pDto->setNombre($_POST['Nombre']);
     $pDto->setAsunto($_POST['Asunto']);
     $pDto->setMensaje($_POST['Mensaje']);
+    $pDto->setCalificacion($_POST['Calificacion']);
 
     $mensaje = $pDao->registrarPqrs($pDto);
 
@@ -21,7 +22,7 @@ elseif ($_GET['id']!=null) {
 
     $mensaje = $pDao->eliminarPqrs($_GET['id']);
 
-    header("Location:../interfacesadmi/usuarios.php?mensaje=".$mensaje);
+    header("Location:../interfacesadmi/pqrlistado.php?mensaje=".$mensaje);
 }
 elseif (isset($_POST['modificar'])) {
     $pDao = new PqrsDao();
@@ -31,6 +32,7 @@ elseif (isset($_POST['modificar'])) {
     $pDto->setNombre($_POST['Nombre']);
     $pDto->setAsunto($_POST['Asunto']);
     $pDto->setMensaje($_POST['Mensaje']);
+    $pDto->setCalificacion($_POST['Calificacion']);
 
     $mensaje = $cDao->modificarPqrs($pDto);
     header("Location:../interfacesadmi/usuarios.php?mensaje=".$mensaje);

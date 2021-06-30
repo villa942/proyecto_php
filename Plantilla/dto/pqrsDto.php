@@ -5,6 +5,7 @@ class PqrsDto{
     private $nombre = "";
     private $asunto = "";
     private $mensaje = "";
+    private $calificacion= "";
 
 
     function getIdPqrs(){
@@ -19,6 +20,9 @@ class PqrsDto{
     function getMensaje(){
         return $this->mensaje;
     }
+    function getCalificacion(){
+        return $this->calificacion;
+    }
     function setIdPqrs($idPqrs){
         $this->idPqrs=$idPqrs;
     }
@@ -30,6 +34,9 @@ class PqrsDto{
     }
     function setMensaje($mensaje){
         $this->mensaje=$mensaje;
+    }
+    function setCalificacion($calificacion){
+        $this->calificacion=$calificacion;
     }
 }
 

@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <script>
-    function confirmar(){
-        if(confirm('Esta seguro que desea borrar')){
-            return true;
-        }else{
-            return false;
-        }
-    }
-   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -47,36 +38,14 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -168,11 +137,6 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
     <div class="">
       <a class="btn btn-primary" href="../index.html" role="button">Salir</a>
@@ -180,7 +144,6 @@
   </nav>
   <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -310,87 +273,74 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+    <center>
+    <section class="container">
+      <div class="container">
+      
+      <div> 
+        <div class="row-2">
+            <div class="col-md-8">
+            <form action="../Controladores/controlador.enfermedades.php" method="POST" id="form">
+            <br>
+                <h2 class="text-center">Registrar nueva enfermedad</h2>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <b><label for="">Nombre Enfermedad</label></b>
+                        <input type="text" name="nombre_enfermedad" class="form-control" placeholder="Nombre" aria-label="First name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <b><label for="">Descripcion</label></b>
+                        <textarea name="descripcion" class="form-control" placeholder="Descripcion enfermedad" aria-label="First name"></textarea>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                <div class="col">
+                        <b><label for="">Sintomas</label></b>
+                        <textarea name="sintomas" class="form-control" placeholder="Sintomas" aria-label="First name"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                        <b><label for="">Recomendaciones</label></b>
+                        <textarea name="recomendaciones" class="form-control" placeholder="Recomendaciones" aria-label="First name"></textarea>
+                    </div>
+                </div>
+                  <br><hr>
+                <div>
+                <center>
+                    <input type="submit" name="registro" id="registro" value="Registrarse" class="btn btn-primary">
+                </center>
+                <br>
+                </div>
+                
+            </form>
+            
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <?php
+        if (isset($_GET['mensaje'])) {
+        ?>   
+        <div class="row"><br><br>
+                <div class="col-md-6">
+                <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?>
+                </h4></div>
+                </div>
+            <div class="col-md-5"></div>
+        </div> 
+        <?php
+        }
+        ?>
         
-      <button > <a href="crearespecialista.php">Crear especialista</a></button>
-
-
-      <h1>Lista especialistas</h1>
-    <table class="table table-striped mt-4 table table-bordered border-primary"  >
-    <thead>
-    <tr>
+    </div>
     
-    <th>Numero de licencia</th>
-    <th>Fecha expedicion</th>
-    <th>Nombre</th>
-    <th>Celular </th>
-    <th>Especialidad</th>
-    <th>Ciudad</th>
-    <th>Correo</th>
-    <th>Ente </th>
-    
-    <th>Modificar</th>
-    <th>Eliminar</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    require '../conexion.php';
-    require '../dto/especialistaDto.php';
-    require '../dao/especialistaDao.php';
-
-    $eDao = new EspecialistaDao();
-    $allusers = $eDao->listarTodoses();
-    
-    foreach ($allusers as $user) {?>  
-    <tr> 
-    <td> <?php echo $user['numero_licencia'];?>  </td>
-    <td>  <?php echo $user['fecha_expedicion'];?>  </td>
-    <td>  <?php echo $user['nombre'];?>  </td>
-    <td>  <?php echo $user['celular'];?>  </td>
-    <td>  <?php echo $user['especialidad'];?>  </td>
-    <td>  <?php echo $user['ciudad'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
-    <td>  <?php echo $user['ente'];?>  </td>
-    <td><a href="modificarespecialista.php?id=<?php echo $user['numero_licencia'];?>">Modificar</a></td>
-    <td><a href="../controladores/controlador.especialista.php?id=<?php echo $user['numero_licencia']; ?>
-    " onclick = "return confirmar();" >Eliminar </a></td>    
-
-    
-    
-    </tr>
-  <?php
-    }
-  ?>
-  
-  
-    </tbody>
-    </table>
-
-    <?php
-
-if(isset($_GET['mensaje'])){
-    ?>
-<div class="row"><br><br>
-<div class="col-md-5"></div>
-<div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
-<div class="col-md-5"></div>
-</div>
-
-<?php
-}
-?>
-
-
-
-
-
-
-
       </div><!-- /.container-fluid -->
     </section>
+    </center>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
