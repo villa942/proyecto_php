@@ -89,7 +89,7 @@
                 </div>
                 <div class="card-footer">
                     <center>        
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Me interesa</button>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@getbootstrap">Me interesa</button>
                     </center>
                 </div>
                 </div>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="card-footer">
                     <center>        
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@fat">Me interesa</button>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Me interesa</button>
                     </center>
                 </div>
                 </div>
@@ -135,128 +135,6 @@
         </div>
         <br><br>
        <!-- Modales -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <center>
-              <div class="bg-primary" style="padding: 15px;">
-                <h3 style="color: white; " class="fw-bold">PLAN DE SALUD</h3>
-              </div>
-              </center>
-              <div class="modal-body">
-                <form action="planesSalud.php" method="POST">
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Tipo Documento</label>
-                  <select name=""  class="form-select">
-                    <option value="">Tipo Documento</option>
-                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
-                    <option value="Cédula de extranjería">Cédula de extranjería</option>
-                    <option value="N.I.T">N.I.T</option>
-                  </select>
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Numero Documento</label>
-                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Nombre</label>
-                    <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Correo Electronico</label>
-                    <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder text-center">Numero Celular</label>
-                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder text-center">Plan Elegido</label>
-                    <input type="text" name="Nombre" class="form-control"  placeholder="Diamante" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <center>
-                  <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
-                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
-                </center>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Model 2 -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <center>
-              <div class="bg-primary" style="padding: 15px;">
-                <h3 style="color: white; " class="fw-bold">PLAN DE SALUD</h3>
-              </div>
-              </center>
-              <div class="modal-body">
-                <form action="planesSalud.php" method="POST">
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Tipo Documento</label>
-                  <select name=""  class="form-select">
-                    <option value="">Tipo Documento</option>
-                    <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
-                    <option value="Cédula de extranjería">Cédula de extranjería</option>
-                    <option value="N.I.T">N.I.T</option>
-                  </select>
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Numero Documento</label>
-                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Nombre</label>
-                    <input type="text" name="Nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder">Correo Electronico</label>
-                    <input type="email" class="form-control" name="Correo"  placeholder="Correo" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder text-center">Numero Celular</label>
-                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="" class="fw-bolder text-center">Plan Elegido</label>
-                    <input type="text" name="Nombre" class="form-control"  placeholder="Zafiro" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <center>
-                  <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
-                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
-                </center>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Model 3 -->
         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -266,12 +144,12 @@
               </div>
               </center>
               <div class="modal-body">
-                <form action="planesSalud.php" method="POST">
+                <form action="../Plantilla/Controladores/controlador.planesdesalud.php" method="POST">
                 <div class="form-row">
                   <div class="col-md-6 form-group">
                     <label for="" class="fw-bolder">Tipo Documento</label>
-                  <select name=""  class="form-select">
-                    <option value="">Tipo Documento</option>
+                  <select name="Tipodocumento" class="form-select">
+                    <option value="" >Tipo Documento</option>
                     <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
                     <option value="Cédula de extranjería">Cédula de extranjería</option>
                     <option value="N.I.T">N.I.T</option>
@@ -280,7 +158,7 @@
                   </div>
                   <div class="col-md-6 form-group">
                     <label for="" class="fw-bolder">Numero Documento</label>
-                    <input type="text" class="form-control" name="Numero"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                    <input type="text" class="form-control" name="Numerodocumento"  placeholder="Numero Documento" data-rule="minlen:4" data-msg="Please enter a valid email" />
                     <div class="validate"></div>
                   </div>
                 </div>
@@ -299,25 +177,48 @@
                 <div class="form-row">
                   <div class="col-md-6 form-group">
                     <label for="" class="fw-bolder text-center">Numero Celular</label>
-                    <input type="text" name="Numero " class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <input type="text" name="Telefono" class="form-control"  placeholder="Numero Celular" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     <div class="validate"></div>
                   </div>
                   <div class="col-md-6 form-group">
                     <label for="" class="fw-bolder text-center">Plan Elegido</label>
-                    <input type="text" name="Nombre" class="form-control"  placeholder="Esmeralda" data-rule="minlen:4" data-msg="Please enter at least 4 chars" disabled/>
+                    <select name="Planseleccionado" class="form-select">
+                    <option value="" >Plan Elegido</option>
+                    <option value="Diamante">Diamante</option>
+                    <option value="Zafiro">Zafiro</option>
+                    <option value="Esmeralda">Esmeralda</option>
+                  </select>
                     <div class="validate"></div>
                   </div>
                 </div>
                 <center>
                   <input type="button"  data-bs-dismiss="modal" value="Cerrar" class="btn btn-dark">
-                  <input type="submit" name="registro" id="registro" value="Enviar" class="btn btn-primary">
+                  <input type="submit" name="registrar" value="Enviar" class="btn btn-primary">
                 </center>
                 </form>
+                <br>
               </div>
             </div>
           </div>
         </div>
     </section>
+    <center>
+            <div class="col-md-4"></div>
+            <?php
+            if (isset($_GET['mensaje'])) {
+            ?>   
+            <div class="row"><br><br>
+                    <div class="col-md-12">
+                    <div class="col-md-12 text-center alert alert-success" role="alert"><h4><?php echo $mensaje = $_GET['mensaje'] ?>
+                    </h4></div>
+                    </div>
+                <div class="col-md-5"></div>
+            </div> 
+            <?php
+            }
+            ?>
+          </div>
+          </center>
   </main>
 
   <footer id="footer">

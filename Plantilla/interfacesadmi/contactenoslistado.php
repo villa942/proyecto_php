@@ -323,7 +323,6 @@
                     <th>Correo</th>
                     <th>Asunto</th>
                     <th>Mensaje</th>
-                    <th>Modificar</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -343,10 +342,10 @@
             <td>  <?php echo $user['Correo'];?>  </td>
             <td>  <?php echo $user['Asunto'];?>  </td>
             <td>  <?php echo $user['Mensaje'];?>  </td>
-            <td><a href="modificarusuario.php?id=<?php echo $user['id_usuario'];?>">Modificar</a></td>
-            <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['id_usuario']; ?>
+            <td><a href="../Controladores/controlador.contactenos.php?id=<?php echo $user['idContacto']; ?>
             " onclick = "return confirmar();" >Eliminar </a></td>    
             </tr>
+            
         <?php
             }
         ?>
