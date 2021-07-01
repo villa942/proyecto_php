@@ -47,36 +47,14 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -168,11 +146,6 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
     <div class="">
       <a class="btn btn-primary" href="../index.html" role="button">Salir</a>
@@ -184,6 +157,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../Dashboard/admin.html" class="brand-link">
+
       <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
@@ -308,7 +282,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../interfacesadmi/planesdesalud.php" class="nav-link">
+                <a href="../interfacesadmi/enfermedades.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Solicitud de planes</p>
                 </a>
@@ -332,6 +306,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -347,86 +322,68 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
-      <button > <a href="crearusuario.php">Crear usuario </a></button>
+      <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Solicitud Planes de Salud</h1>
+          </div>
+          <div class="col-sm-6">
+          <?php
 
-      <h1>Lista de usuarios</h1>
-    <table class="table table-striped mt-4 table table-bordered border-primary"  >
-    <thead>
-    <tr>
-    
-    <th>Id</th>
-    <th>Cedula</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Correo</th>
-    <th>Celular</th>
-    <th>Tipo usuario</th>
-    <th>Modificar</th>
-    <th>Eliminar</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    require '../conexion.php';
-    require '../dto/UsuarioLoginDto.php';
-    require '../dao/UsuarioLoginDao.php';
+            if(isset($_GET['mensaje'])){
+                ?>
+            <div class="row"><br><br>
+            <div class="col-md-5"></div>
+            <div class="col-md-6 text-center alert alert-success" role="alert"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
+            <div class="col-md-5"></div>
+            </div>
 
-    $eDao = new UsuarioLoginDao();
-    $allusers = $eDao->listarTodos();
-    
-    foreach ($allusers as $user) {?>  
-    <tr> 
-    <td> <?php echo $user['idUsuario'];?>  </td>
-    <td>  <?php echo $user['cedula'];?>  </td>
-    <td>  <?php echo $user['nombre'];?>  </td>
-    <td>  <?php echo $user['apellido'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
-    <td>  <?php echo $user['celular'];?>  </td>
-    <td>  <?php echo $user['tipo_usuario'];?>  </td>
-    <td><a href="modificarusuario.php?id=<?php echo $user['idUsuario'];?>">Modificar</a></td>
-    <td><a href="../controladores/controlador.usuariologin.php?id=<?php echo $user['idUsuario']; ?>
-    " onclick = "return confirmar();" >Eliminar </a></td>    
+            <?php
+            }
+            ?>
+          </div>
+      </div>
+      
+        <table class="table table-striped mt-4 table table-bordered border-primary"  >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo Documento</th>
+                    <th>Numero Documento</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Plan Seleccionado</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+        <tbody>
+            <?php
+            require '../conexion.php';
+            require '../Dao/planesdesaludDao.php';
+            require '../Dto/planesdesaludDto.php';
 
-    
-    </tr>
-  <?php
-    }
-  ?>
-  
-  
+            $pDao = new PlanDao();
+            $allusers = $pDao->listarTodos();
+            
+            foreach ($allusers as $user) {?>  
+            <tr> 
+            <td>  <?php echo $user['idPlan'];?>  </td>
+            <td>  <?php echo $user['Tipodocumento'];?>  </td>
+            <td>  <?php echo $user['Numerodocumento'];?>  </td>
+            <td>  <?php echo $user['Nombre'];?>  </td>
+            <td>  <?php echo $user['Correo'];?>  </td>
+            <td>  <?php echo $user['Telefono'];?>  </td>
+            <td>  <?php echo $user['Planseleccionado'];?>  </td>
+            <td><a href="../controladores/controlador.planesdesalud.php?id=<?php echo $user['idPlan']; ?>
+            " onclick = "return confirmar();" >Eliminar </a></td>    
+            </tr>
+        <?php
+            }
+        ?>
     </tbody>
     </table>
     <br><br>
-    <?php
-
-    if(isset($_GET['mensaje'])){
-        ?>
-    <div class="row"><br><br>
-    <div class="col-md-5"></div>
-    <div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
-    <div class="col-md-5"></div>
-    </div>
-
-    <?php
-    }
-    ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

@@ -272,7 +272,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../interfacesadmi/enfermedades.php" class="nav-link">
+                <a href="../interfacesadmi/planesdesalud.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Solicitud de planes</p>
                 </a>
@@ -296,7 +296,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0 ">Bienvenido Administrador</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -312,22 +312,51 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="../Dashboard/dist/img/cita.jpg" class="card-img-top" alt="400">
+              <div class="card-body">
+                <h5 class="text-center " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Agende su cita</h5>
+                <p class="card-text">Solicite una cita medica, recuerda la salud es importante</p>
+              </div>
+              <div class="card-footer">
+                <center>
+                  <a class="btn btn-primary" href="../interfacesadmi/usuarios.php" role="button">Cita</a>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="../Dashboard/dist/img/modifcar.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="text-center " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Citas Proximas</h5>
+                <p class="card-text">Consulte las citas proximas que tiene registradas.</p>
+              </div>
+              
+              <div class="card-footer">
+                <center>
+                  <a class="btn btn-primary" href="../interfacesadmi/usuarios.php" role="button">Agenda</a>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="../Dashboard/dist/img/usuario.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="text-center " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Usuarios</h5>
+                <p class="card-text">Consulte los usuarios que se encuentran disponibles.</p>
+              </div>
+              <div class="card-footer">
+                <center>
+                  <a class="btn btn-primary" href="../interfacesadmi/usuarios.php" role="button">Usuario</a>
+                </center>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
