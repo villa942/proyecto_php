@@ -222,6 +222,27 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Citas
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../interfacenormal/agendar.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agendar Citas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../interfacenormal/citasprogramadas.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Citas Programadas</p>
+                </a>
+              </li>
           
             </ul>
           </li>

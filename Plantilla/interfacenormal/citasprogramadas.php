@@ -279,18 +279,17 @@
       <div class="container-fluid">
         
 
-      <h1>Lista de entes de salud</h1>
+      <h1>Citas programadas</h1>
     <table class="table table-striped mt-4 table table-bordered border-primary"  >
     <thead>
     <tr>
     
-    <th>Nit</th>
-    <th>Razon social</th>
-    <th>Representante</th>
-    <th>Correo</th>
-    <th>Sitio</th>
-    <th>Ciudad</th>
-    <th>Capacidad</th>
+    <th>Id</th>
+    <th>Fecha</th>
+    <th>Especialidad</th>
+    <th>Hora</th>
+    <th>Centro medico</th>
+    
     
 
     </tr>
@@ -298,21 +297,20 @@
     <tbody>
     <?php
     require '../conexion.php';
-    require '../dto/enteDto.php';
-    require '../dao/enteDao.php';
+    require '../dto/citaDto.php';
+    require '../dao/citaDao.php';
 
-    $eDao = new EnteDao();
+    $eDao = new CitaDao();
     $allusers = $eDao->listarTodos();
     
     foreach ($allusers as $user) {?>  
     <tr> 
-    <td> <?php echo $user['nit'];?>  </td>
-    <td>  <?php echo $user['razon_social'];?>  </td>
-    <td>  <?php echo $user['nombre_representante_legal'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
-    <td>  <?php echo $user['sitio_web'];?>  </td>
-    <td>  <?php echo $user['ciudad'];?>  </td>
-    <td>  <?php echo $user['capacidad_pacientes'];?>  </td>
+    <td> <?php echo $user['id'];?>  </td>
+    <td>  <?php echo $user['Fecha'];?>  </td>
+    <td>  <?php echo $user['Especialidad'];?>  </td>
+    <td>  <?php echo $user['Hora'];?>  </td>
+    <td>  <?php echo $user['CentroMedico'];?>  </td>
+    
     
     
     </tr>

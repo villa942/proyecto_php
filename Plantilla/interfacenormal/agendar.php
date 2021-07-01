@@ -25,15 +25,6 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <script>
-    function confirmar(){
-        if(confirm('Esta seguro que desea borrar')){
-            return true;
-        }else{
-            return false;
-        }
-    }
-   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -47,36 +38,14 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../Dashboard/normal.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -168,11 +137,6 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
     <div class="">
       <a class="btn btn-primary" href="../index.html" role="button">Salir</a>
@@ -183,8 +147,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../Dashboard/normal.html" class="brand-link">
-    <center>
+    <a href="normal.html" class="brand-link">
+      <center>
         <span class="brand-text font-weight-light">Red Salud Vallecaucana</span>
       </center>
     </a>
@@ -197,7 +161,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Perfil</a>
+          <a href="../Dashboard/index.html" class="d-block">Perfil</a>
         </div>
       </div>
 
@@ -207,7 +171,7 @@
           <li class="nav-header">EXAMPLES</li>
           
           <li class="nav-item">
-            <a href="entes.php" class="nav-link">
+            <a href="../interfacenormal/entes.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Entes de salud
@@ -215,7 +179,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="especialistas.php" class="nav-link">
+            <a href="../interfacenormal/especialistas.php" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Especialistas
@@ -243,9 +207,8 @@
                   <p>Citas Programadas</p>
                 </a>
               </li>
-          
             </ul>
-          </li>
+          
           
           
         </ul>
@@ -262,6 +225,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+            <h1 class="m-0">Agendar cita</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -277,66 +241,51 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
+      <div class="col-md-9 ">
+      <form  action="../controladores/controlador.cita.php" method="POST">
 
-      <h1>Lista de entes de salud</h1>
-    <table class="table table-striped mt-4 table table-bordered border-primary"  >
-    <thead>
-    <tr>
-    
-    <th>Nit</th>
-    <th>Razon social</th>
-    <th>Representante</th>
-    <th>Correo</th>
-    <th>Sitio</th>
-    <th>Ciudad</th>
-    <th>Capacidad</th>
-    
 
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    require '../conexion.php';
-    require '../dto/enteDto.php';
-    require '../dao/enteDao.php';
 
-    $eDao = new EnteDao();
-    $allusers = $eDao->listarTodos();
-    
-    foreach ($allusers as $user) {?>  
-    <tr> 
-    <td> <?php echo $user['nit'];?>  </td>
-    <td>  <?php echo $user['razon_social'];?>  </td>
-    <td>  <?php echo $user['nombre_representante_legal'];?>  </td>
-    <td>  <?php echo $user['correo_electronico'];?>  </td>
-    <td>  <?php echo $user['sitio_web'];?>  </td>
-    <td>  <?php echo $user['ciudad'];?>  </td>
-    <td>  <?php echo $user['capacidad_pacientes'];?>  </td>
-    
-    
-    </tr>
-  <?php
-    }
-  ?>
-  
-  
-    </tbody>
-    </table>
-    <?php
-
-if(isset($_GET['mensaje'])){
-    ?>
-<div class="row"><br><br>
-<div class="col-md-5"></div>
-<div class="col-md-1 text-center"><h4><?php echo $mensaje = $_GET['mensaje'] ?></h4></div>
-<div class="col-md-5"></div>
-</div>
-
+<label for="">Fecha de cita</label>
+<input type="date" name="fecha"placeholder="Escriba la fecha de la cita" required class="form-control"><br>
+<label for="">Hora</label>
+<input type="time" name="hora" placeholder="Escriba el representante legal "required class="form-control"><br>
+<label for="">Especialidad</label>
+<select class="form-control" name="especialidad" id="especialidad">
 <?php
+require '../dao/especialistaDao.php';
+require '../dto/especialistaDto.php';
+require '../conexion.php';
+
+$ente = new EspecialistaDao();
+ $listent = $ente->listarTodoses();
+foreach ($listent as $ent){
+    echo'<option  value="'.$ent["especialidad"].'-'.$ent["nombre"].'"  >'
+    .$ent["especialidad"]," ".$ent["nombre"].
+    '</option>';
 }
 ?>
 
+</select>
+<br>
+<label for="">Centro medico</label>
+<select name="centroMedico"  class="form-control">
+                <option value="">Centro Medico</option>
+                <option value="Centro Médico Roosevelt">Centro Médico Roosevelt</option>
+                <option value="Centro Médico Calí">Centro Médico Calí</option>
+                <option value="Centro Médico Flora Industrial">Centro Médico Flora Industrial</option>
+                <option value="Centro Médico Prados del Norte">Centro Médico Prados del Norte</option>
+                <option value="Centro Médico Tequendama">Centro Médico Tequendama</option>
+                <option value="Centro Médico Versalles">Centro Médico Versalles</option>
+                <option value="Unidad de Urgencias Calí">Unidad de Urgencias Calí</option>
+              </select>
+
+              <br><br>
+<center>
+<input type="submit" href="ente.php"name="registro" id="registro" value="Registrar" class="btn btn-outline-primary">
+</center>
+<br>
+</form>
 
 
 
@@ -344,13 +293,7 @@ if(isset($_GET['mensaje'])){
 
 
 
-
-
-
-
-
-
-
+</div>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
